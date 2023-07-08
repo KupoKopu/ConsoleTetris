@@ -1,0 +1,236 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "google-tests",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-google-tests-Debug-6e0305f5bee65ee87586.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "google-tests",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "google-tests/lib",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-google-tests.lib-Debug-5fc2ba67e36bfffc58e1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "google-tests/lib"
+				},
+				{
+					"build" : "google-tests/lib/googlemock",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-google-tests.lib.googlemock-Debug-2017b7b7709ab1802cf6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "google-tests/lib/googlemock",
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				},
+				{
+					"build" : "google-tests/lib/googletest",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-google-tests.lib.googletest-Debug-12073d6cef78dd2bf0e5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "google-tests/lib/googletest",
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ConsoleTetris",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "google-tests",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "googletest-distribution",
+					"parentIndex" : 1
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "gmock",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "gtest",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ConsoleTetris::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ConsoleTetris-Debug-aa42b41a5f496a831043.json",
+					"name" : "ConsoleTetris",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gmock::@323a26e3dce51c5b1099",
+					"jsonFile" : "target-gmock-Debug-37abd0de18b7518fb025.json",
+					"name" : "gmock",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gmock_main::@323a26e3dce51c5b1099",
+					"jsonFile" : "target-gmock_main-Debug-4cdf9162618dc0a50e8b.json",
+					"name" : "gmock_main",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "google_tests_run::@0fdefa935ea8ac8d9f50",
+					"jsonFile" : "target-google_tests_run-Debug-5382988073c00f696f48.json",
+					"name" : "google_tests_run",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gtest::@da649c28270624d6376a",
+					"jsonFile" : "target-gtest-Debug-e106f89dadacc1732407.json",
+					"name" : "gtest",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gtest_main::@da649c28270624d6376a",
+					"jsonFile" : "target-gtest_main-Debug-c27dfe6ff31daf8a29c2.json",
+					"name" : "gtest_main",
+					"projectIndex" : 4
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/LMLK-404/Documents/projects/ConsoleTetris/cmake-build-debug",
+		"source" : "C:/Users/LMLK-404/Documents/projects/ConsoleTetris"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

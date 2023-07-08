@@ -1,3 +1,9 @@
 # ninja log v5
 0	247	7105317570134346	CMakeFiles/ConsoleTetris.dir/main.cpp.obj	f4e3ca1d722609ca
 248	338	7105317571027177	ConsoleTetris.exe	daf5f8add2b3680d
+8	939	7105421849902475	google-tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	95f27ba65e8a85b4
+1	972	7105421850229822	google-tests/CMakeFiles/google_tests_run.dir/ExampleTest.cpp.obj	ddf78f5bdf96d73f
+5	4602	7105421886331619	google-tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	560f15ee76276ec6
+4604	6067	7105421901186745	lib/libgtest.a	f13f9977373d8a0a
+6067	6110	7105421901627445	lib/libgtest_main.a	fae462558eadac9d
+6110	8031	7105421920776107	google-tests/google_tests_run.exe	5a10997cd3a276f2
