@@ -3,6 +3,7 @@
 Terminal::Terminal(short width, short height): bufferWidth(width), bufferHeight(height) {
     hStdOut = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, nullptr, CONSOLE_TEXTMODE_BUFFER, nullptr);
     bufferScreen = new SMALL_RECT {0,0,1,1};
+    dwBytesWritten = 0;
 
     initialiseTerminal();
 }
@@ -34,4 +35,8 @@ short Terminal::getBufferWidth() const {
 
 short Terminal::getBufferHeight() const {
     return bufferHeight;
+}
+
+void Terminal::render(wchar_t *screenToRender) {
+    WriteConsoleOutputCharacterW(hStdOut, screenToRender, bufferWidth * bufferHeight, {0,0}, &dwBytesWritten);
 }

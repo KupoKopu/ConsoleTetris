@@ -23,11 +23,14 @@ public:
     short getBufferHeight() const;
 
     void setBufferHeight(short bufferHeight);
+
+    void render(wchar_t *screenToRender);
 private:
     HANDLE hStdOut{};
     DWORD dwMode{};
     short bufferWidth{};
     short bufferHeight{};
     SMALL_RECT *bufferScreen{};
+    DWORD dwBytesWritten{};
 };
 #endif //CONSOLETETRIS_TERMINAL_H
