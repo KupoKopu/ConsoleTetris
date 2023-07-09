@@ -1,17 +1,8 @@
-//
-// Created by LMLK-404 on 08/07/2023.
-//
-
-
-
-
-
 #include "Terminal.h"
 
-Terminal::Terminal() {
-    hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-
-    GetConsoleMode(hStdOut, &dwMode);
+Terminal::Terminal(short width, short height): bufferWidth(width), bufferHeight(height) {
+    hStdOut = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, nullptr, CONSOLE_TEXTMODE_BUFFER, nullptr);
+    bufferScreen = new SMALL_RECT {0,0,1,1};
 
     initialiseTerminal();
 }
@@ -25,7 +16,22 @@ void Terminal::setDwMode(DWORD dwMode) {
 }
 
 void Terminal::initialiseTerminal() {
-    setDwMode(ENABLE_VIRTUAL_TERMINAL_PROCESSING);
+    SetConsoleWindowInfo(hStdOut, true, bufferScreen);
 
-    SetConsoleMode(hStdOut, dwMode);
+    COORD buffer_size = {bufferWidth, bufferHeight};
+    SetConsoleScreenBufferSize(hStdOut, buffer_size);
+
+    bufferScreen->Right = bufferWidth-1;
+    bufferScreen->Bottom = bufferHeight-1;
+    SetConsoleWindowInfo(hStdOut, true, bufferScreen);
+
+    SetConsoleActiveScreenBuffer(hStdOut);
+}
+
+short Terminal::getBufferWidth() const {
+    return bufferWidth;
+}
+
+short Terminal::getBufferHeight() const {
+    return bufferHeight;
 }

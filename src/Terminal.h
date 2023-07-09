@@ -8,18 +8,26 @@
 
 class Terminal {
 public:
-    Terminal();
+    Terminal(short width, short height);
 
     void initialiseTerminal();
 
-
-private:
-    HANDLE hStdOut{};
-    DWORD dwMode{};
-public:
     DWORD getDwMode() const;
 
     void setDwMode(DWORD dwMode);
 
+    short getBufferWidth() const;
+
+    void setBufferWidth(short bufferWidth);
+
+    short getBufferHeight() const;
+
+    void setBufferHeight(short bufferHeight);
+private:
+    HANDLE hStdOut{};
+    DWORD dwMode{};
+    short bufferWidth{};
+    short bufferHeight{};
+    SMALL_RECT *bufferScreen{};
 };
 #endif //CONSOLETETRIS_TERMINAL_H
