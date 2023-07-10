@@ -40,3 +40,17 @@ short Terminal::getBufferHeight() const {
 void Terminal::render(wchar_t *screenToRender) {
     WriteConsoleOutputCharacterW(hStdOut, screenToRender, bufferWidth * bufferHeight, {0,0}, &dwBytesWritten);
 }
+
+Terminal *Terminal::getInstance(const short &width, const short &height) {
+    if (nullptr == instance) {
+        instance = new Terminal(width, height);
+    }
+    return instance;
+}
+
+Terminal *Terminal::instance = nullptr;
+
+Terminal::~Terminal() {
+    delete bufferScreen;
+    delete instance;
+}

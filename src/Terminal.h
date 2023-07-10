@@ -7,8 +7,15 @@
 #include <windows.h>
 
 class Terminal {
-public:
+private:
     Terminal(short width, short height);
+
+public:
+    Terminal(Terminal &other) = delete;
+    void operator=(const Terminal &) = delete;
+    ~Terminal();
+
+    static Terminal *getInstance(const short &width, const short &height);
 
     void initialiseTerminal();
 
@@ -26,6 +33,8 @@ public:
 
     void render(wchar_t *screenToRender);
 private:
+    static Terminal *instance;
+
     HANDLE hStdOut{};
     DWORD dwMode{};
     short bufferWidth{};
