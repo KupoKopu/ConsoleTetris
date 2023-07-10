@@ -11,12 +11,14 @@ Console Tetris project for assignment
 
 
 ### Backlog
-00\
+
+<del>00\
 Console Rendering
 
-00.a\
+<del>00.a\
 As a Developer\
 I want to be able to render characters in a fixed resolution
+
 
 01\
 Menu\
