@@ -1,8 +1,7 @@
-//
-// Created by LMLK-404 on 11/07/2023.
-//
-
 #ifndef CONSOLETETRIS_TETROMINO_H
 #define CONSOLETETRIS_TETROMINO_H
+#include <string>
+
+const std::wstring tetromino[7];
 
 #endif //CONSOLETETRIS_TETROMINO_H

@@ -39,7 +39,7 @@ And expect the program to end
 02\
 Tetris Gameplay
 
-02.a\
+<del>02.a\
 As a Player\
 After selecting play\
 I expect a 12x18 play area

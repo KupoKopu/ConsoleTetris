@@ -1,5 +1,9 @@
-//
-// Created by LMLK-404 on 11/07/2023.
-//
-
 #include "tetromino.h"
+
+const std::wstring tet[7] {std::basic_string(L"..X...X...X...X."),
+                           std::basic_string(L"..X..XX...X....."),
+                           std::basic_string(L".....XX..XX....."),
+                           std::basic_string(L"..X..XX..X......"),
+                           std::basic_string(L".X...XX...X....."),
+                           std::basic_string(L".X...X...XX....."),
+                           std::basic_string(L"..X...X..XX.....")};
