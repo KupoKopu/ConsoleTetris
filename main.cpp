@@ -2,24 +2,25 @@
 #include <thread>
 #include <chrono>
 #include "src/Terminal.h"
+#include "src/PlayArea.h"
+#include "src/CoordHelper.h"
+
 short screenWidth = 80;
 short screenHeight = 30;
 using namespace std::chrono_literals;
 
-int fieldWidth = screenWidth;
-int fieldHeight = screenHeight;
+int fieldWidth = 12;
+int fieldHeight = 18;
 unsigned char *playField = nullptr;
 
 int main() {
     Terminal *terminal = Terminal::getInstance(screenWidth, screenHeight);
+    PlayArea *playArea = new PlayArea(12, 18);
 
-    playField = new unsigned char[fieldWidth * fieldHeight]; // Create play field buffer
-    for (int x = 0; x < fieldWidth; x++) // Board Boundary
-        for (int y = 0; y < fieldHeight; y++)
-            playField[y * fieldWidth + x] = (x == 0 || x == fieldWidth - 1 || y == fieldHeight - 1) ? 9 : 0;
+    wchar_t *screen = new wchar_t[screenWidth * screenHeight];
+    for (int i = 0; i < screenWidth * screenHeight; i++) screen[i] = L' ';
 
-    wchar_t *screen = new wchar_t[screenWidth*screenHeight];
-    for (int i = 0; i < screenWidth*screenHeight; i++) screen[i] = L'#';
+    renderOnTo(screen, screenWidth, screenHeight, playArea->getArea(), playArea->getWidth(), playArea->getHeight(), {2,2});
 
     terminal->render(screen);
 
