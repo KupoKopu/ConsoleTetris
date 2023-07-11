@@ -4,13 +4,9 @@
 #include "src/Terminal.h"
 #include "src/PlayArea.h"
 #include "src/CoordHelper.h"
+#include "src/constants.h"
 
-short screenWidth = 80;
-short screenHeight = 30;
 using namespace std::chrono_literals;
-
-int fieldWidth = 12;
-int fieldHeight = 18;
 unsigned char *playField = nullptr;
 
 int main() {
