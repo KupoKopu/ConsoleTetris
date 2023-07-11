@@ -18,6 +18,13 @@ int main() {
 
     renderOnTo(screen, screenWidth, screenHeight, playArea->getArea(), playArea->getWidth(), playArea->getHeight(), {2,2});
 
+    int currentPiece = 0; // first piece
+    int currentRotation = 0; // no rotations
+    int currentX = fieldWidth / 2; // middle of field
+    int currentY = 0; // top of field
+
+    renderPiece(screen, screenWidth, screenHeight, currentPiece, currentRotation, currentX, currentY, {2,2});
+
     terminal->render(screen);
 
     bool gameOver = false;
