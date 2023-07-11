@@ -22,6 +22,6 @@ int rotate(int pixelX, int pixelY, int rotation) {
         case 3: {
             return 3 - pixelY + (pixelX * 4);
         }
-        return 0;
     }
+    return 0;
 }
