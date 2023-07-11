@@ -11,7 +11,7 @@ unsigned char *playField = nullptr;
 
 int main() {
     Terminal *terminal = Terminal::getInstance(screenWidth, screenHeight);
-    PlayArea *playArea = new PlayArea(12, 18);
+    PlayArea *playArea = new PlayArea(fieldWidth, fieldHeight);
 
     wchar_t *screen = new wchar_t[screenWidth * screenHeight];
     for (int i = 0; i < screenWidth * screenHeight; i++) screen[i] = L' ';
