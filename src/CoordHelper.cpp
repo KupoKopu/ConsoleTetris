@@ -8,6 +8,17 @@ int renderOnTo(wchar_t * source, int sourceWidth, int sourceHeight, const wchar_
     return 0;
 }
 
+int renderPiece(wchar_t * source, int sourceWidth, int sourceHeight, int tetrominoIndex, int rotation, int currentX, int currentY, std::pair<int,int> offset) {
+    for (int x = 0; x < 4; x++) {
+        for (int y = 0; y < 4; y++) {
+            if (tetromino[tetrominoIndex][rotate(x, y, rotation)] == L'X') {
+                source[(y + currentY + offset.second)*sourceWidth + (x + currentX + offset.first)] = tetrominoIndex + 65;
+            }
+        }
+    }
+    return 0;
+}
+
 int rotate(int pixelX, int pixelY, int rotation) {
     switch (rotation % 4) {
         case 0: {
@@ -24,4 +35,24 @@ int rotate(int pixelX, int pixelY, int rotation) {
         }
     }
     return 0;
+}
+
+bool doesPieceFit(int tetrominoIndex, int rotation, int positionX, int positionY, wchar_t *playArea) {
+    for (int x = 0; x < 4; ++x) {
+        for (int y = 0; y < 4; ++y) {
+            int  pieceIndex = rotate(x, y, rotation);
+
+            int fieldIndex = (positionY + y) * fieldWidth + (positionX + x);
+
+            // validating within bounds
+            if (positionX + x >= 0 && positionX + x < fieldHeight) {
+                if (positionY + y >= 0 && positionY + y < fieldHeight) {
+                    if (tetromino[tetrominoIndex][pieceIndex] == L'X' && playArea[fieldIndex] != 0) { // checking if index is already occupied
+                        return false; // false if collision happened
+                    }
+                }
+            }
+        }
+    }
+    return true; // true if collision not happened
 }
