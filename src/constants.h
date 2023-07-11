@@ -4,8 +4,8 @@
 
 #ifndef CONSOLETETRIS_CONSTANTS_H
 #define CONSOLETETRIS_CONSTANTS_H
-short screenWidth = 80;
-short screenHeight = 30;
-int fieldWidth = 12;
-int fieldHeight = 18;
+constexpr short screenWidth = 80;
+constexpr short screenHeight = 30;
+constexpr int fieldWidth = 12;
+constexpr int fieldHeight = 18;
 #endif //CONSOLETETRIS_CONSTANTS_H
