@@ -8,4 +8,5 @@ constexpr short screenWidth = 80;
 constexpr short screenHeight = 30;
 constexpr int fieldWidth = 12;
 constexpr int fieldHeight = 18;
+constexpr std::pair<int,int> playAreaOffset = {2,2};
 #endif //CONSOLETETRIS_CONSTANTS_H
