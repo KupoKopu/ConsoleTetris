@@ -68,6 +68,17 @@ int main() {
         }
 
         // z key
+        if (keyPressed[3])
+        {
+            if (!rotateHold && doesPieceFit(currentPiece, currentRotation + 1, currentX, currentY, playArea->getArea()))
+            {
+                currentRotation = currentRotation + 1;
+            }
+            rotateHold = true;
+        } else {
+            rotateHold = false;
+        }
+
         if (forceDown) {
             // reset counter
             speedCounter = 0;
