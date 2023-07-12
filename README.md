@@ -59,7 +59,7 @@ I expect when the tetrinomo collides\
 That the tetrinimo is "locked"\
 And a new tetrinimo appears
 
-02.e\
+<del>02.e\
 As a Player\
 I expect when I press left arrow,  down arrow, right arrow, z key\
 That I move left, down, right and rotate (clockwise)
