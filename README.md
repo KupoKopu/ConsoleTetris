@@ -56,7 +56,8 @@ I expect that the tetrinimo falls down
 02.d\
 As a Player\
 I expect when the tetrinomo collides\
-That the tetrinimo is "locked"
+That the tetrinimo is "locked"\
+And a new tetrinimo appears
 
 02.e\
 As a Player\
