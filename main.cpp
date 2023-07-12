@@ -44,7 +44,10 @@ int main() {
                 // horizontal match
 
                 // choose next piece
-
+                currentX = fieldWidth / 2; // starting poistion maybe extract
+                currentY = 0;
+                currentRotation = 0;
+                currentPiece = rand() % 7;
                 // if piece does not fit
 
             }
