@@ -1,11 +1,8 @@
-//
-// Created by LMLK-404 on 08/07/2023.
-//
-
 #ifndef CONSOLETETRIS_TERMINAL_H
 #define CONSOLETETRIS_TERMINAL_H
 #include <windows.h>
 
+// Singleton class controlling display to console
 class Terminal {
 private:
     Terminal(short width, short height);
@@ -23,7 +20,7 @@ public:
 private:
     static Terminal *instance;
 
-    HANDLE hStdOut{};
+    HANDLE handleOut{};
     short bufferWidth{};
     short bufferHeight{};
     SMALL_RECT *bufferScreen{};
