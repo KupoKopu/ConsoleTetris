@@ -24,7 +24,7 @@ I want to be able to render characters in a fixed resolution
 Menu\
 Has Play and Exit
 
-01.a\
+<del>01.a\
 As a Player\
 From the menu\
 I want to be able to select play\
