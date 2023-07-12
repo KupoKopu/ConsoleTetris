@@ -55,12 +55,12 @@ void Menu::userInput() {
     for (int k = 0; k < 2; ++k) {
         keyPressed[k] = (GetAsyncKeyState((unsigned char)("QP"[k]))) != 0;
     }
-    // game logic(?)
+    // menu logic(?)
     // Q key
-//    if (keyPressed[0])
-//    {
-//        emitExitCode(EXIT);
-//    }
+    if (keyPressed[0])
+    {
+        emitExitCode(EXIT);
+    }
 
     // P
     if (keyPressed[1])
