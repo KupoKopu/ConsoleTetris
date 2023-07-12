@@ -8,14 +8,6 @@ Terminal::Terminal(short width, short height): bufferWidth(width), bufferHeight(
     initialiseTerminal();
 }
 
-DWORD Terminal::getDwMode() const {
-    return dwMode;
-}
-
-void Terminal::setDwMode(DWORD dwMode) {
-    Terminal::dwMode |= dwMode;
-}
-
 void Terminal::initialiseTerminal() {
     SetConsoleWindowInfo(hStdOut, true, bufferScreen);
 
@@ -27,14 +19,6 @@ void Terminal::initialiseTerminal() {
     SetConsoleWindowInfo(hStdOut, true, bufferScreen);
 
     SetConsoleActiveScreenBuffer(hStdOut);
-}
-
-short Terminal::getBufferWidth() const {
-    return bufferWidth;
-}
-
-short Terminal::getBufferHeight() const {
-    return bufferHeight;
 }
 
 void Terminal::render(wchar_t *screenToRender) {

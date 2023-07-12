@@ -19,24 +19,11 @@ public:
 
     void initialiseTerminal();
 
-    DWORD getDwMode() const;
-
-    void setDwMode(DWORD dwMode);
-
-    short getBufferWidth() const;
-
-    void setBufferWidth(short bufferWidth);
-
-    short getBufferHeight() const;
-
-    void setBufferHeight(short bufferHeight);
-
     void render(wchar_t *screenToRender);
 private:
     static Terminal *instance;
 
     HANDLE hStdOut{};
-    DWORD dwMode{};
     short bufferWidth{};
     short bufferHeight{};
     SMALL_RECT *bufferScreen{};
