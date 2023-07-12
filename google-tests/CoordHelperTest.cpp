@@ -17,12 +17,7 @@ TEST(CoordHelper_Suite, render_middle){
     std::pair<int,int> copySize = {2,2};
     std::pair<int,int> offset = {1,1};
 
-    std::wcout << sourceActual << std::endl;
-
     renderOnTo(sourceActual, sourceWidth, copy, copySize, offset);
-    std::wcout << sourceActual << std::endl;
-    std::wcout << sourceExpect << std::endl;
-
 
     ASSERT_STREQ(sourceActual, sourceExpect);
 }
@@ -43,12 +38,7 @@ TEST(CoordHelper_Suite, render_top_half){
     std::pair<int,int> copySize = {2,1};
     std::pair<int,int> offset = {1,1};
 
-    std::wcout << sourceActual << std::endl;
-
     renderOnTo(sourceActual, sourceWidth, copy, copySize, offset);
-    std::wcout << sourceActual << std::endl;
-    std::wcout << sourceExpect << std::endl;
-
 
     ASSERT_STREQ(sourceActual, sourceExpect);
 }
@@ -69,12 +59,7 @@ TEST(CoordHelper_Suite, render_left_side){
     std::pair<int,int> copySize = {1,2};
     std::pair<int,int> offset = {1,1};
 
-    std::wcout << sourceActual << std::endl;
-
     renderOnTo(sourceActual, sourceWidth, copy, copySize, offset);
-    std::wcout << sourceActual << std::endl;
-    std::wcout << sourceExpect << std::endl;
-
 
     ASSERT_STREQ(sourceActual, sourceExpect);
 }
