@@ -9,6 +9,7 @@ constexpr std::pair<int,int> playAreaOffset = {2,2};
 enum ExitCode {
  OK,
  RETURN,
+ START,
  EXIT
 };
 #endif //CONSOLETETRIS_CONSTANTS_H
