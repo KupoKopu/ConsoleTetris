@@ -67,7 +67,7 @@ int main() {
             }
         }
 
-        // z key
+        // z(rotate clockwise) key
         if (keyPressed[3])
         {
             if (!rotateHold && doesPieceFit(currentPiece, currentRotation + 1, currentX, currentY, playArea->getArea()))
