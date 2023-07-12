@@ -18,9 +18,8 @@ public:
     Menu(int width, int height, ExitCode &outExitCode);
 
     void start() override;
-    [[nodiscard]] wchar_t *getScreen() const;
+    wchar_t *getScreen() const;
 private:
-    int screenArea;
 
     int currentSelection;
     std::pair<std::wstring, std::pair<int,int>> menuOptions[2];

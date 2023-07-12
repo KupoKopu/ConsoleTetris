@@ -32,9 +32,6 @@ private:
     // console rendering
     Terminal *terminal;
 
-    // screen variables
-    int screenArea;
-
     // code that controls state in main
     ExitCode &outExitCode;
 
