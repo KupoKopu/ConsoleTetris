@@ -12,6 +12,19 @@ int renderOnTo(wchar_t * source, int sourceWidth, const wchar_t * copy, std::pai
     return 0;
 }
 
+int renderText(wchar_t * source, int sourceWidth, const wchar_t * copy, std::pair<int,int> copySize, std::pair<int,int> offset) {
+    int copyWidth = copySize.first;
+    int copyHeight = copySize.second;
+    int offsetX = offset.first;
+    int offsetY = offset.second;
+    for (int x = 0; x < copyWidth; x++) {
+        for (int y = 0; y < copyHeight; y++) {
+            source[(y + offsetY)*sourceWidth + (x + offsetX)] = copy[y*copyWidth + x];
+        }
+    }
+    return 0;
+}
+
 int renderPiece(wchar_t * source, int sourceWidth, int tetrominoIndex, int rotation, std::pair<int,int> currentPos, std::pair<int,int> offset) {
     int currentX = currentPos.first;
     int currentY = currentPos.second;
