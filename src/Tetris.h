@@ -41,7 +41,7 @@ private:
     int fieldArea;
     wchar_t *field; // tetris grid
 
-    // current tetromino data
+    // current TETROMINO data
     int currentPiece; // first piece
     int currentRotation; // no rotations
     int currentX; // middle of field

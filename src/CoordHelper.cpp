@@ -32,7 +32,7 @@ int renderPiece(wchar_t * source, int sourceWidth, int tetrominoIndex, int rotat
     int offsetY = offset.second;
     for (int x = 0; x < 4; x++) {
         for (int y = 0; y < 4; y++) {
-            if (tetromino[tetrominoIndex][rotate(x, y, rotation)] == L'X') {
+            if (TETROMINO[tetrominoIndex][rotate(x, y, rotation)] == L'X') {
                 source[(y + currentY + offsetY)*sourceWidth + (x + currentX + offsetX)] = tetrominoIndex + 65;
             }
         }
@@ -68,7 +68,7 @@ bool doesPieceFit(int tetrominoIndex, int rotation, int positionX, int positionY
             // validating within bounds
             if (positionX + x >= 0 && positionX + x < FIELD_HEIGHT) {
                 if (positionY + y >= 0 && positionY + y < FIELD_HEIGHT) {
-                    if (tetromino[tetrominoIndex][pieceIndex] == L'X' && playArea[fieldIndex] != 0) { // checking if index is already occupied
+                    if (TETROMINO[tetrominoIndex][pieceIndex] == L'X' && playArea[fieldIndex] != 0) { // checking if index is already occupied
                         return false; // false if collision happened
                     }
                 }

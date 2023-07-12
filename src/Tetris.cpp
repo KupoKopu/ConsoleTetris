@@ -45,7 +45,7 @@ void Tetris::userInput() {
         keyPressed[k] = (GetAsyncKeyState((unsigned char)("\x27\x25\x28Z"[k]))) != 0;
     }
 
-    // move tetromino right
+    // move TETROMINO right
     if (keyPressed[0])
     {
         if (doesPieceFit(currentPiece, currentRotation, currentX + 1, currentY, field))
@@ -54,7 +54,7 @@ void Tetris::userInput() {
         }
     }
 
-    // move tetromino left
+    // move TETROMINO left
     if (keyPressed[1])
     {
         if (doesPieceFit(currentPiece, currentRotation, currentX - 1, currentY, field))
@@ -63,7 +63,7 @@ void Tetris::userInput() {
         }
     }
 
-    // move tetromino down
+    // move TETROMINO down
     if (keyPressed[2])
     {
         if (doesPieceFit(currentPiece, currentRotation, currentX, currentY + 1, field))
@@ -85,7 +85,7 @@ void Tetris::userInput() {
     }
 }
 
-// forces tetromino piece down a character if forceDown is true
+// forces TETROMINO piece down a character if forceDown is true
 void Tetris::handleForceDown() {
     if (forceDown) {
         // reset counter
@@ -98,7 +98,7 @@ void Tetris::handleForceDown() {
             // lock piece to playArea
             for (int x = 0; x < 4; x++) {
                 for (int y = 0; y < 4; ++y) {
-                    if (tetromino[currentPiece][rotate(x, y, currentRotation)] == L'X') {
+                    if (TETROMINO[currentPiece][rotate(x, y, currentRotation)] == L'X') {
                         field[(currentY + y) * fieldWidth + (currentX + x)] = currentPiece + 1;
                     }
                 }
@@ -124,13 +124,13 @@ void Tetris::handleForceDown() {
                 }
             }
 
-            // reset tetromino to top
+            // reset TETROMINO to top
             currentX = fieldWidth / 2; // starting position maybe extract
             currentY = 0;
             currentRotation = 0;
             currentPiece = rand() % 7;
 
-            // check if new tetromino is blocked by previous locked tetromino
+            // check if new TETROMINO is blocked by previous locked TETROMINO
             // (game is over if true)
             if(!doesPieceFit(currentPiece, currentRotation, currentX, currentY, field)) {
                 emitExitCode(RETURN);
@@ -143,9 +143,9 @@ void Tetris::handleForceDown() {
 // draw elements to screen
 void Tetris::draw() {
     // draw playing field
-    renderOnTo(screen, screenWidth, field, {fieldWidth, fieldHeight}, playAreaOffset);
-    // draw tetromino piece
-    renderPiece(screen, screenWidth, currentPiece, currentRotation, {currentX, currentY}, playAreaOffset);
+    renderOnTo(screen, screenWidth, field, {fieldWidth, fieldHeight}, FIELD_OFFSET);
+    // draw TETROMINO piece
+    renderPiece(screen, screenWidth, currentPiece, currentRotation, {currentX, currentY}, FIELD_OFFSET);
 
     // vertical line popping animation
     if (!verticalLines.empty()) {
