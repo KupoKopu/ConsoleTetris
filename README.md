@@ -71,7 +71,7 @@ And there is a full row\
 I expect the line to disappear\
 I expect the tetrinimos "locked" above to shift down\
 
-0.2.g\
+<del>0.2.g\
 As a Player\
 When the "locked" tetrinimos reaches the top of the play area\
 I expect game over
