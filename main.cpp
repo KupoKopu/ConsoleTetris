@@ -50,6 +50,13 @@ int main() {
         }
 
         // right
+        if (keyPressed[0])
+        {
+            if (doesPieceFit(currentPiece, currentRotation, currentX + 1, currentY, playArea->getArea()))
+            {
+                currentX = currentX + 1;
+            }
+        }
 
         // down
 
