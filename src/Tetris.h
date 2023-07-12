@@ -15,7 +15,7 @@ public:
     virtual void tick();
     virtual void userInput();
     virtual void draw();
-    virtual ExitCode emitExitCode(ExitCode code);
+    virtual void emitExitCode(ExitCode code);
 
     Tetris(int width, int height, int fieldWidth, int fieldHeight, ExitCode &outExitCode);
 
