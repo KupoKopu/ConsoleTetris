@@ -64,13 +64,12 @@ As a Player\
 I expect when I press left arrow,  down arrow, right arrow, z key\
 That I move left, down, right and rotate (clockwise)
 
-0.2.f\
+<del>0.2.f\
 As a Player\
 When the tetrinimo is "locked"\
 And there is a full row\
 I expect the line to disappear\
 I expect the tetrinimos "locked" above to shift down\
-And I expect to be awarded points (200)
 
 0.2.g\
 As a Player\
