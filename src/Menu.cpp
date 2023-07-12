@@ -13,7 +13,7 @@ Menu::Menu(int width, int height, ExitCode &outExitCode) : outExitCode(outExitCo
 
     currentSelection = 0;
     menuOptions[0] = {L"Play (P)", {4,4}};
-    menuOptions[1] = {L"Exit (Q)", {4,6}};
+    menuOptions[1] = {L"Quit (Q)", {4,6}};
 
     terminal = Terminal::getInstance(80, 30);
 }
