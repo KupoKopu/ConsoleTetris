@@ -50,11 +50,11 @@ bool doesPieceFit(int tetrominoIndex, int rotation, int positionX, int positionY
         for (int y = 0; y < 4; ++y) {
             int  pieceIndex = rotate(x, y, rotation);
 
-            int fieldIndex = (positionY + y) * fieldWidth + (positionX + x);
+            int fieldIndex = (positionY + y) * FIELD_WIDTH + (positionX + x);
 
             // validating within bounds
-            if (positionX + x >= 0 && positionX + x < fieldHeight) {
-                if (positionY + y >= 0 && positionY + y < fieldHeight) {
+            if (positionX + x >= 0 && positionX + x < FIELD_HEIGHT) {
+                if (positionY + y >= 0 && positionY + y < FIELD_HEIGHT) {
                     if (tetromino[tetrominoIndex][pieceIndex] == L'X' && playArea[fieldIndex] != 0) { // checking if index is already occupied
                         return false; // false if collision happened
                     }
