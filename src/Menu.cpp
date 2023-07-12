@@ -15,12 +15,6 @@ Menu::Menu(int width, int height, ExitCode &outExitCode) : outExitCode(outExitCo
     menuOptions[0] = {L"Play", {4,4}};
     menuOptions[1] = {L"Exit", {4,6}};
 
-//    playText = L"play";
-//    playPosition = {4,4};
-
-//    exitText = L"exit";
-//    exitPosition = {4, 6};
-
     terminal = Terminal::getInstance(80, 30);
 }
 
@@ -38,9 +32,6 @@ void Menu::draw() {
         count++;
 
     }
-//    renderText(screen, screenWidth, menuOptions[0].c_str(), {menuOptions[0].size(), 1}, playPosition);
-//    renderText(screen, screenWidth, menuOptions[1].c_str(), {menuOptions[1].size(), 1}, exitPosition);
-//    renderOnTo(screen, screenWidth, L"bb", {2,1}, playPosition);
 }
 
 void Menu::start() {
