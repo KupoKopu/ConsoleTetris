@@ -21,6 +21,8 @@ int main() {
     int currentRotation = 0; // no rotations
     int currentX = fieldWidth / 2; // middle of field
     int currentY = 0; // top of field
+    bool keyPressed[4];
+    bool rotateHold = false;
 
     int speed = 20;
     int speedCounter = 0;
@@ -34,11 +36,27 @@ int main() {
         forceDown = (speedCounter == speed);
 
         // input
+        for (int k = 0; k < 4; ++k) {
+            keyPressed[k] = (GetAsyncKeyState((unsigned char)("\x27\x25\x28Z"[k]))) != 0;
+        }
         // game logic(?)
+        // left
+        if (keyPressed[1])
+        {
+            if (doesPieceFit(currentPiece, currentRotation, currentX - 1, currentY, playArea->getArea()))
+            {
+                currentX = currentX - 1;
+            }
+        }
+
+        // right
+
+        // down
+
+        // z key
         if (forceDown) {
             // reset counter
             speedCounter = 0;
-
             if (doesPieceFit(currentPiece, currentRotation, currentX, currentY + 1, playArea->getArea())) {
                 currentY = currentY + 1;
             } else {
