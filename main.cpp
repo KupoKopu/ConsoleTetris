@@ -36,6 +36,9 @@ int main() {
         // input
         // game logic(?)
         if (forceDown) {
+            // reset counter
+            speedCounter = 0;
+
             if (doesPieceFit(currentPiece, currentRotation, currentX, currentY + 1, playArea->getArea())) {
                 currentY = currentY + 1;
             } else {
