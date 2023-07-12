@@ -28,7 +28,7 @@ void Menu::draw() {
         const wchar_t *text = menuOptions[count].first.c_str();
         int size = menuOptions[count].first.size();
         std::pair<int, int> offset = menuOptions[count].second;
-        renderText(screen, screenWidth, text, {size, 1}, offset);
+        renderText(screen, screenWidth, text, size, offset);
         count++;
 
     }
