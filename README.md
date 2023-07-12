@@ -53,15 +53,16 @@ I expect to see one of the 7 tetrinimos at the top
 As a Player\
 I expect that the tetrinimo falls down
 
-02.d\
+<del>02.d\
 As a Player\
 I expect when the tetrinomo collides\
-That the tetrinimo is "locked"
+That the tetrinimo is "locked"\
+And a new tetrinimo appears
 
 02.e\
 As a Player\
-I expect when I press A S D Q E\
-That I move left, down, right and rotate left and right
+I expect when I press left arrow,  down arrow, right arrow, z key\
+That I move left, down, right and rotate (clockwise)
 
 0.2.f\
 As a Player\

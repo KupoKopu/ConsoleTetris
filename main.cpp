@@ -36,15 +36,27 @@ int main() {
         // input
         // game logic(?)
         if (forceDown) {
+            // reset counter
+            speedCounter = 0;
+
             if (doesPieceFit(currentPiece, currentRotation, currentX, currentY + 1, playArea->getArea())) {
                 currentY = currentY + 1;
             } else {
-                // lock
-
+                // lock piece to playArea
+                for (int x = 0; x < 4; x++) {
+                    for (int y = 0; y < 4; ++y) {
+                        if (tetromino[currentPiece][rotate(x, y, currentRotation)] == L'X') {
+                            playArea->getArea()[(currentY + y) * playArea->getWidth() + (currentX + x)] = currentPiece + 1;
+                        }
+                    }
+                }
                 // horizontal match
 
                 // choose next piece
-
+                currentX = fieldWidth / 2; // starting position maybe extract
+                currentY = 0;
+                currentRotation = 0;
+                currentPiece = rand() % 7;
                 // if piece does not fit
 
             }
