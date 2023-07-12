@@ -8,4 +8,6 @@ add_executable(ConsoleTetris main.cpp src/Terminal.cpp src/Terminal.h src/CoordH
 include_directories(src)
 add_subdirectory(src)
 
+set(CMAKE_EXE_LINKER_FLAGS "-static")
+
 add_subdirectory(google-tests)
