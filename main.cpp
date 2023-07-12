@@ -59,6 +59,13 @@ int main() {
         }
 
         // down
+        if (keyPressed[2])
+        {
+            if (doesPieceFit(currentPiece, currentRotation, currentX, currentY + 1, playArea->getArea()))
+            {
+                currentY = currentY + 1;
+            }
+        }
 
         // z key
         if (forceDown) {
