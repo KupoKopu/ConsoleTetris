@@ -94,6 +94,22 @@ int main() {
                     }
                 }
                 // horizontal match
+                for (int y = 0; y < 4; ++y) {
+                    if (currentY + y < fieldHeight - 1) { // boundary check
+                        bool bottomLine = true;
+                        for (int x = 1; x < fieldWidth; ++x) {
+                            // check if line has empty space
+                            bottomLine &= (playArea->getArea()[(currentY + y) * fieldWidth + x]) != 0;
+                        }
+
+                        if (bottomLine) {
+                            for (int x = 1; x < fieldWidth - 1 ; ++x) {
+                                // create line
+                                playArea->getArea()[(currentY + y) * fieldWidth + x] = 8;
+                            }
+                        }
+                    }
+                }
 
                 // choose next piece
                 currentX = fieldWidth / 2; // starting position maybe extract
