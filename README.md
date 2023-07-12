@@ -44,7 +44,7 @@ As a Player\
 After selecting play\
 I expect a 12x18 play area
 
-02.b\
+<del>02.b\
 As a Player\
 At the start of play\
 I expect to see one of the 7 tetrinimos at the top
