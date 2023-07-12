@@ -130,8 +130,9 @@ void Tetris::handleForceDown() {
             currentPiece = rand() % 7;
 
             // if piece does not fit
-            gameOver = !doesPieceFit(currentPiece, currentRotation, currentX, currentY, field);
-            emitExitCode(RETURN);
+            if(!doesPieceFit(currentPiece, currentRotation, currentX, currentY, field)) {
+                emitExitCode(RETURN);
+            }
         }
     }
 }
@@ -156,7 +157,7 @@ void Tetris::draw() {
     }
 }
 
-ExitCode Tetris::emitExitCode(ExitCode code) {
+void Tetris::emitExitCode(ExitCode code) {
     outExitCode = code;
 }
 
@@ -165,7 +166,7 @@ wchar_t *Tetris::getScreen() const {
 }
 
 void Tetris::start() {
-    while(!gameOver) {
+    while(OK == outExitCode) {
         tick();
 
         handleSpeedCounter();
