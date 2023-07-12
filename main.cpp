@@ -99,15 +99,15 @@ int main() {
                 for (int y = 0; y < 4; ++y) {
                     if (currentY + y < fieldHeight - 1) { // boundary check
                         bool bottomLine = true;
-                        for (int x = 1; x < fieldWidth; ++x) {
+                        for (int x = 1; x < fieldWidth - 1; ++x) {
                             // check if line has empty space
                             bottomLine &= (playArea->getArea()[(currentY + y) * fieldWidth + x]) != 0;
                         }
 
                         if (bottomLine) {
-                            for (int x = 1; x < fieldWidth - 1 ; ++x) {
+                            for (int x = 1; x < playArea->getWidth() - 1 ; ++x) {
                                 // create line
-                                playArea->getArea()[(currentY + y) * fieldWidth + x] = 8;
+                                playArea->getArea()[(currentY + y) * playArea->getWidth() + x] = 8;
                             }
                             verticalLines.push_back(currentY + y);
                         }
@@ -133,10 +133,10 @@ int main() {
             std::this_thread::sleep_for(400ms);
 
             for (auto &v : verticalLines)
-                for (int x = 1; x < fieldWidth - 1; x++)
+                for (int x = 1; x < playArea->getWidth() - 1; x++)
                 {
                     for (int py = v; py > 0; py--)
-                        playArea->getArea()[py * fieldWidth + x] = playArea->getArea()[(py - 1) * fieldWidth + x];
+                        playArea->getArea()[py * playArea->getWidth() + x] = playArea->getArea()[(py - 1) * playArea->getWidth() + x];
                     playArea->getArea()[x] = 0;
                 }
 
