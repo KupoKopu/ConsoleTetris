@@ -119,8 +119,9 @@ int main() {
                 currentY = 0;
                 currentRotation = 0;
                 currentPiece = rand() % 7;
-                // if piece does not fit
 
+                // if piece does not fit
+                gameOver = !doesPieceFit(currentPiece, currentRotation, currentX, currentY, playArea->getArea());
             }
         }
 
