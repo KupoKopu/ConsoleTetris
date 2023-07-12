@@ -16,21 +16,43 @@ int main() {
     wchar_t *screen = new wchar_t[screenWidth * screenHeight];
     for (int i = 0; i < screenWidth * screenHeight; i++) screen[i] = L' ';
 
-    renderOnTo(screen, screenWidth, playArea->getArea(), {playArea->getWidth(), playArea->getHeight()}, playAreaOffset);
 
     int currentPiece = 0; // first piece
     int currentRotation = 0; // no rotations
     int currentX = fieldWidth / 2; // middle of field
     int currentY = 0; // top of field
 
-    renderPiece(screen, screenWidth, currentPiece, currentRotation, {currentX, currentY}, playAreaOffset);
-
-    terminal->render(screen);
+    int speed = 20;
+    int speedCounter = 0;
+    bool forceDown = false;
 
     bool gameOver = false;
     while(!gameOver) {
-        std::this_thread::sleep_for(5000ms); // Small Step = 1 Game Tick
+        // game tick
+        std::this_thread::sleep_for(50ms); // Small Step = 1 Game Tick
+        speedCounter++;
+        forceDown = (speedCounter == speed);
 
-        gameOver = true;
+        // input
+        // game logic(?)
+        if (forceDown) {
+            if (doesPieceFit(currentPiece, currentRotation, currentX, currentY + 1, playArea->getArea())) {
+                currentY = currentY + 1;
+            } else {
+                // lock
+
+                // horizontal match
+
+                // choose next piece
+
+                // if piece does not fit
+
+            }
+        }
+
+        // render
+        renderOnTo(screen, screenWidth, playArea->getArea(), {playArea->getWidth(), playArea->getHeight()}, playAreaOffset);
+        renderPiece(screen, screenWidth, currentPiece, currentRotation, {currentX, currentY}, playAreaOffset);
+        terminal->render(screen);
     }
 }
