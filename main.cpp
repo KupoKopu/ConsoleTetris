@@ -1,6 +1,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <vector>
 #include "src/Terminal.h"
 #include "src/PlayArea.h"
 #include "src/CoordHelper.h"
@@ -24,6 +25,7 @@ int main() {
     bool keyPressed[4];
     bool rotateHold = false;
 
+    std::vector<int> verticalLines;
     int speed = 20;
     int speedCounter = 0;
     bool forceDown = false;
@@ -94,6 +96,23 @@ int main() {
                     }
                 }
                 // horizontal match
+                for (int y = 0; y < 4; ++y) {
+                    if (currentY + y < fieldHeight - 1) { // boundary check
+                        bool bottomLine = true;
+                        for (int x = 1; x < fieldWidth - 1; ++x) {
+                            // check if line has empty space
+                            bottomLine &= (playArea->getArea()[(currentY + y) * fieldWidth + x]) != 0;
+                        }
+
+                        if (bottomLine) {
+                            for (int x = 1; x < playArea->getWidth() - 1 ; ++x) {
+                                // create line
+                                playArea->getArea()[(currentY + y) * playArea->getWidth() + x] = 8;
+                            }
+                            verticalLines.push_back(currentY + y);
+                        }
+                    }
+                }
 
                 // choose next piece
                 currentX = fieldWidth / 2; // starting position maybe extract
@@ -105,9 +124,26 @@ int main() {
             }
         }
 
-        // render
+        // draw
         renderOnTo(screen, screenWidth, playArea->getArea(), {playArea->getWidth(), playArea->getHeight()}, playAreaOffset);
         renderPiece(screen, screenWidth, currentPiece, currentRotation, {currentX, currentY}, playAreaOffset);
+
+        if (!verticalLines.empty()) {
+            terminal->render(screen);
+            std::this_thread::sleep_for(400ms);
+
+            for (auto &v : verticalLines)
+                for (int x = 1; x < playArea->getWidth() - 1; x++)
+                {
+                    for (int py = v; py > 0; py--)
+                        playArea->getArea()[py * playArea->getWidth() + x] = playArea->getArea()[(py - 1) * playArea->getWidth() + x];
+                    playArea->getArea()[x] = 0;
+                }
+
+            verticalLines.clear();
+        }
+
+        // render
         terminal->render(screen);
     }
 }
