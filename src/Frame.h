@@ -1,7 +1,7 @@
 #ifndef CONSOLETETRIS_FRAME_H
 #define CONSOLETETRIS_FRAME_H
 
-#include "constants.h"
+#include "Constants.h"
 
 // Abstract class to derive from to create frames to render on terminal
 class Frame {
