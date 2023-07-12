@@ -11,13 +11,7 @@ Tetris::Tetris(int width, int height, int fieldWidth, int fieldHeight, ExitCode 
     this->fieldHeight = fieldHeight;
     fieldArea = fieldWidth * fieldHeight;
     field = new wchar_t[fieldArea];
-    for (int x = 0; x < fieldWidth; x++)
-    {
-        for (int y = 0; y < fieldHeight; y++)
-        {
-            field[y*fieldWidth + x] =  ( x == 0 || x == fieldWidth - 1 || y == fieldHeight - 1) ? 9 : 0;
-        }
-    }
+    resetField();
 
 
     currentPiece = 0;
@@ -132,6 +126,7 @@ void Tetris::handleForceDown() {
             // if piece does not fit
             if(!doesPieceFit(currentPiece, currentRotation, currentX, currentY, field)) {
                 emitExitCode(RETURN);
+                resetField();
             }
         }
     }
@@ -178,5 +173,15 @@ void Tetris::start() {
         draw();
 
         terminal->render(getScreen());
+    }
+}
+
+void Tetris::resetField() {
+    for (int x = 0; x < fieldWidth; x++)
+    {
+        for (int y = 0; y < fieldHeight; y++)
+        {
+            field[y*fieldWidth + x] =  ( x == 0 || x == fieldWidth - 1 || y == fieldHeight - 1) ? 9 : 0;
+        }
     }
 }

@@ -22,6 +22,8 @@ public:
     void handleForceDown();
     void handleSpeedCounter();
     void start();
+    void resetField();
+
 
     wchar_t *getScreen() const;
 private:
