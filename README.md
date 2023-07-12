@@ -49,7 +49,7 @@ As a Player\
 At the start of play\
 I expect to see one of the 7 tetrinimos at the top
 
-02.c\
+<del>02.c\
 As a Player\
 I expect that the tetrinimo falls down
 
