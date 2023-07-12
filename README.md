@@ -20,7 +20,7 @@ As a Developer\
 I want to be able to render characters in a fixed resolution
 
 
-01\
+<del>01\
 Menu\
 Has Play and Exit
 
@@ -30,13 +30,13 @@ From the menu\
 I want to be able to select play\
 And expect Tetris gameplay to start
 
-01.b\
+<del>01.b\
 As a Player\
 From the menu\
 I want to be able to select exit\
 And expect the program to end
 
-02\
+<del>02\
 Tetris Gameplay
 
 <del>02.a\

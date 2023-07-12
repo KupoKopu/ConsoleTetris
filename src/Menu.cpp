@@ -12,8 +12,8 @@ Menu::Menu(int width, int height, ExitCode &outExitCode) : outExitCode(outExitCo
     for (int i = 0; i < screenWidth * screenHeight; i++) screen[i] = L' ';
 
     currentSelection = 0;
-    menuOptions[0] = {L"Play", {4,4}};
-    menuOptions[1] = {L"Exit", {4,6}};
+    menuOptions[0] = {L"Play (P)", {4,4}};
+    menuOptions[1] = {L"Quit (Q)", {4,6}};
 
     terminal = Terminal::getInstance(80, 30);
 }
@@ -55,12 +55,12 @@ void Menu::userInput() {
     for (int k = 0; k < 2; ++k) {
         keyPressed[k] = (GetAsyncKeyState((unsigned char)("QP"[k]))) != 0;
     }
-    // game logic(?)
+    // menu logic(?)
     // Q key
-//    if (keyPressed[0])
-//    {
-//        emitExitCode(EXIT);
-//    }
+    if (keyPressed[0])
+    {
+        emitExitCode(EXIT);
+    }
 
     // P
     if (keyPressed[1])
